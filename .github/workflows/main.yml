@@ -1,0 +1,24 @@
+name: NodJS Github Acations
+
+on: push #general push
+  #push:
+    #branches: [main, devlopment, production]
+
+jobs: 
+  build:
+    runs-on: ubuntu-latest
+
+    steps: 
+      - uses: actions/checkout@v6.0.1 # checkout the repo/ imported from github
+      - name: Use Node
+      
+      - uses: actions/setup-node@v6 # setup-node (read about it)
+        with:
+          node-version: 24
+      # - run: npm ci
+      # - run: npm test
+      - name: Install dependencies
+        run: npm install
+      
+      - name: Run test
+        run: npm test 
